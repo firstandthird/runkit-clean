@@ -14,7 +14,7 @@
     "url": "https://github.com/firstandthird/runkit-clean/issues"
   },
   "scripts": {
-    "test": "tape test/test.clean.js"
+    "test": "tape test/test.clean.js | tap-spec"
   },
   "homepage": "https://github.com/firstandthird/runkit-clean#readme",
   "devDependencies": {

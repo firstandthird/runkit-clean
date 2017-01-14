@@ -8,12 +8,11 @@ class CleanTask extends RunKitTask {
     return 'Cleans out the indicated directory';
   }
 
-  // save the filename:hashname map to file:
-  execute(allDone) {
-    const dirsToClean = Array.isArray(this.options.directories) ? this.options.directories : [this.options.directories];
-    async.each(dirsToClean, (directory, done) => {
-      fs.emptyDir(directory, done);
-    }, allDone);
+  process(input, filename, processDone) {
+    console.log('+')
+    console.log(input)
+    console.log(filename)
+    fs.emptyDir(input, processDone);
   }
 }
 

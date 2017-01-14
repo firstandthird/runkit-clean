@@ -23,7 +23,7 @@ test('can clean a directory', (t) => {
       });
     },
     emptyIt: (fillDir, done) => {
-      const task = new CleanTask('clean', { directories: [fixtureDir] }, {});
+      const task = new CleanTask('clean', { files: [fixtureDir] }, {});
       task.execute(done);
     },
     verifyEmpty: (emptyIt, done) => {

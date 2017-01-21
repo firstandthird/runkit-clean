@@ -1,22 +1,21 @@
 {
-  "name": "runkit-clean",
+  "name": "taskkit-clean",
   "version": "0.0.3",
-  "description": "runkit task for clearing out a directory",
+  "description": "taskkit task for clearing out a directory",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "tape test/test.clean.js | tap-spec"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/firstandthird/runkit-clean.git"
+    "url": "git+https://github.com/firstandthird/taskkit-clean.git"
   },
   "author": "First+Third",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/firstandthird/runkit-clean/issues"
+    "url": "https://github.com/firstandthird/taskkit-clean/issues"
   },
-  "scripts": {
-    "test": "tape test/test.clean.js | tap-spec"
-  },
-  "homepage": "https://github.com/firstandthird/runkit-clean#readme",
+  "homepage": "https://github.com/firstandthird/taskkit-clean#readme",
   "devDependencies": {
     "async": "^2.1.4",
     "eslint": "^3.9.1",
@@ -27,7 +26,7 @@
   },
   "dependencies": {
     "fs-extra": "^1.0.0",
-    "runkit-task": "0.0.10"
+    "taskkit-task": "0.0.11"
   },
   "eslintConfig": {
     "extends": "firstandthird"

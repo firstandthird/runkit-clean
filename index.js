@@ -1,8 +1,8 @@
 'use strict';
-const RunKitTask = require('runkit-task');
+const TaskKitTask = require('taskkit-task');
 const fs = require('fs-extra');
 
-class CleanTask extends RunKitTask {
+class CleanTask extends TaskKitTask {
   get description() {
     return 'Cleans out the indicated directory';
   }

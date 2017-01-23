@@ -9,7 +9,14 @@ const fixtureDir = path.join(__dirname, 'fixtureDirectory');
 test('can clean a directory', (t) => {
   t.plan(3);
   async.autoInject({
-    fillDir: (done) => {
+    createFixtureDir(done) {
+      if (!fs.existsSync(fixtureDir)) {
+        fs.mkdir(fixtureDir, done);
+        return;
+      }
+      done();
+    },
+    fillDir(createFixtureDir, done) {
       fs.writeFile(path.join(fixtureDir, 'temp1.txt'), 'not a thing really', (err) => {
         if (err) {
           throw err;
@@ -22,11 +29,11 @@ test('can clean a directory', (t) => {
         });
       });
     },
-    emptyIt: (fillDir, done) => {
+    emptyIt(fillDir, done) {
       const task = new CleanTask('clean', { files: [fixtureDir] }, {});
       task.execute(done);
     },
-    verifyEmpty: (emptyIt, done) => {
+    verifyEmpty(emptyIt, done) {
       fs.exists(path.join(fixtureDir, 'subDir'), (exists) => {
         t.equal(exists, false);
       });
@@ -37,5 +44,7 @@ test('can clean a directory', (t) => {
         t.equal(exists, false);
       });
     }
-  }, () => {});
+  }, (err) => {
+    t.equal(err, null, 'no errors');
+  });
 });

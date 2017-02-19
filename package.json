@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/firstandthird/taskkit-clean#readme",
   "devDependencies": {
-    "async": "^2.1.4",
+    "async": "^2.1.5",
     "eslint": "^3.9.1",
     "eslint-config-firstandthird": "^3.0.2",
     "eslint-plugin-import": "^2.1.0",

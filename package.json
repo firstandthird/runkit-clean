@@ -1,6 +1,6 @@
 {
   "name": "taskkit-clean",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "taskkit task for clearing out a directory",
   "main": "index.js",
   "scripts": {

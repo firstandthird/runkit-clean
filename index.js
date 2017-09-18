@@ -12,7 +12,7 @@ class CleanTask extends TaskKitTask {
   }
 
   process(input, filename, processDone) {
-    this.log(input);
+    this.log(`Cleaning ${input}`);
     fs.emptyDir(input, processDone);
   }
 }
